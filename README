@@ -1,0 +1,29 @@
+# More Than A Hack 2027 - Match Possession Classification Pipeline
+
+A high-performing, end-to-end machine learning pipeline designed to classify frame-by-frame match possession (`H`, `A`, `D`, `X`) for the **More Than A Hack 2027** hackathon (Metrica Sports & FC Barcelona).
+
+---
+
+## Overview
+This repository implements an advanced automated tracking analysis pipeline that processes EPTS optical coordinates (`.txt`) and tactical smart-tagging event logs (`.xml`) to predict continuous possession spells for FC Barcelona (`H`) and Athletic Club (`A`), alongside dead-ball (`D`) and unknown transition (`X`) states. 
+
+The architecture bridges raw spatial coordinates with kinematic velocity vectors, multi-frame rolling memory, confidence-based abstention, and mathematical latency alignment to optimize both **Macro F1** and **Spell F1 (`spellF1`)** metrics.
+
+---
+
+## Key Technical Features
+1. **Kinematic Feature Engineering:** Computes instantaneous player and ball velocity vectors ($\Delta x, \Delta y$), maximum closing speeds towards the ball, and dynamic team centroids.
+2. **Advanced Spatial Proximity:** Evaluates team-specific minimum distances, spatial control differentials (`dist_diff`), active duels, and ball playability states.
+3. **Short-Term Memory:** Implements 10-frame ($0.4\text{s}$) and 25-frame ($1.0\text{s}$) rolling averages to capture sustained pressure and spatial control.
+4. **Class-Balanced XGBoost:** Utilizes sample-weight balancing to prevent majority dead-ball class dominance.
+5. **Post-Processing & Latency Correction:** Employs confidence thresholds, forward-fill smoothing, absolute dead-ball overrides, and a 12-frame mathematical temporal shift to neutralize optical transition latency and maximize spell Intersection over Union (IoU).
+
+---
+
+## Repository Structure
+```text
+├── .gitignore               # Excludes raw match data, tracking txts, and CSVs
+├── requirements.txt         # Pinned python dependencies
+├── main.py                  # End-to-end data processing, feature engineering, and model inference
+├── validate_submission.py   # Official competition validation script
+└── technical_documentation.md # Comprehensive architectural documentation
