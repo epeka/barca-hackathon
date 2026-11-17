@@ -27,3 +27,36 @@ The architecture bridges raw spatial coordinates with kinematic velocity vectors
 ├── main.py                  # End-to-end data processing, feature engineering, and model inference
 ├── validate_submission.py   # Official competition validation script
 └── technical_documentation.md # Comprehensive architectural documentation
+
+## Installation & Setup
+
+1. **Clone the repository:**
+   ```bash git clone [https://github.com/epeka/barca-hackathon.git](https://github.com/epeka/barca-hackathon.git)
+   cd barca-hackathon
+
+Install dependencies:
+Bash pip install -r requirements.txt
+
+## Execution Instructions
+Place the official competition dataset files (BAR-ATH_tactical_atd.txt and BAR-ATH_tactical_smart_tagging.xml) into your working directory. (Note: Raw match data is excluded from version control per competition rules).
+
+Run the main processing and prediction script:
+
+Bash
+python main.py
+This will generate your final submission file: submission_shifted.csv.
+
+Validate the output format locally using the official verification script:
+
+Bash
+python validate_submission.py submission_shifted.csv
+🛡️ Data Compliance
+Per competition guidelines, raw match tracking data, video feeds, and proprietary ground-truth answer keys are strictly excluded from this public repository via .gitignore.
+
+
+<ElicitationsGroup message="To help complete your hackathon repository setup:">
+  <Elicitation label="Review .gitignore file setup" query="How do I verify that my .gitignore file successfully blocks raw match data before pushing to GitHub?"/>
+  <Elicitation label="Convert technical docs to PDF" query="How can I convert technical_documentation.md into a PDF for the final submission?"/>
+</ElicitationsGroup>
+
+<FollowUp label="Want me to review your main.py script structure before you submit?" q
