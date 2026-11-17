@@ -24,7 +24,7 @@ The architecture bridges raw spatial coordinates with kinematic velocity vectors
 ```text
 ├── .gitignore               # Excludes raw match data, tracking txts, and CSVs
 ├── requirements.txt         # Pinned python dependencies
-├── main.py                  # End-to-end data processing, feature engineering, and model inference
+├── crazyballtracker.py                  # End-to-end data processing, feature engineering, and model inference
 ├── validate_submission.py   # Official competition validation script
 └── technical_documentation.md # Comprehensive architectural documentation
 
