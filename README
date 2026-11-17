@@ -43,7 +43,7 @@ Place the official competition dataset files (BAR-ATH_tactical_atd.txt and BAR-A
 Run the main processing and prediction script:
 
 Bash
-python main.py
+python crazyballtracker.py
 This will generate your final submission file: submission_shifted.csv.
 
 Validate the output format locally using the official verification script:
