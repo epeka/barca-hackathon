@@ -54,9 +54,3 @@ python validate_submission.py submission_shifted.csv
 Per competition guidelines, raw match tracking data, video feeds, and proprietary ground-truth answer keys are strictly excluded from this public repository via .gitignore.
 
 
-<ElicitationsGroup message="To help complete your hackathon repository setup:">
-  <Elicitation label="Review .gitignore file setup" query="How do I verify that my .gitignore file successfully blocks raw match data before pushing to GitHub?"/>
-  <Elicitation label="Convert technical docs to PDF" query="How can I convert technical_documentation.md into a PDF for the final submission?"/>
-</ElicitationsGroup>
-
-<FollowUp label="Want me to review your main.py script structure before you submit?" q
